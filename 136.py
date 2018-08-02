@@ -70,5 +70,5 @@ def max_rect(arr):
             max_rect = max_cur
     return max_rect
 ####
-input = [[1, 0, 0, 0], [1, 0, 1, 1], [1, 0, 1, 1], [0, 1, 0, 0]]
-print(max_rect(input))
+arr = [[1, 0, 0, 0], [1, 0, 1, 1], [1, 0, 1, 1], [0, 1, 0, 0]]
+print(max_rect(arr))

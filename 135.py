@@ -20,7 +20,7 @@ n4 = BTree(2)
 n3 = BTree(1, left = n5)
 n2 = BTree(5, right = n4)
 n1 = BTree(5, right = n3)
-input = BTree(10, left = n2, right = n1)
+arr = BTree(10, left = n2, right = n1)
 ####
 # This is pretty self explanatory
 def get_min_path(root):
@@ -28,4 +28,4 @@ def get_min_path(root):
         return 0
     return root.val + min(get_min_path(root.left), get_min_path(root.right))
 ####
-print(get_min_path(input))
+print(get_min_path(arr))
