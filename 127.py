@@ -51,7 +51,7 @@ def linked_list_sum(list1, list2, carry = 0):
         next2 = list2.next
 
     val += carry
-    val, carry = val % 10, int(val/10)
+    val, carry = val % 10, val//10
     return Node(val, linked_list_sum(next1, next2, carry))
 
 ####

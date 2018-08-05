@@ -30,15 +30,15 @@ n6 = Node(val = 1)
 t1 = Node(val = 1, right = n6)
 t2 = Node(val = 7, right = t1)
 ####
-# Once an inorder traversal is performed on both trees, it becomes a substring search problem.
-def preorder(root, depth = 0):
+# Once an preorder traversal is performed on both trees, it becomes a substring search problem.
+def preorder(root):
     if not root:
         return []
     # braces used for depth distinction
     ret = ['(']
     ret.append(root.val)
-    ret.extend(preorder(root.left, depth + 1))
-    ret.extend(preorder(root.right, depth + 1))
+    ret.extend(preorder(root.left))
+    ret.extend(preorder(root.right))
     ret.append(')')
     return ret
 

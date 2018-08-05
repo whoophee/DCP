@@ -5,7 +5,7 @@
 ####
 def reverse_string(arr, i, j):
     n = j - i
-    for x in range(int(n/2)):
+    for x in range(n//2):
         newx = n - x - 1
         arr[i + x], arr[i + newx] = arr[i + newx], arr[i + x]
 

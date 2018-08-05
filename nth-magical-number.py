@@ -20,19 +20,19 @@
 from math import gcd
 
 def lcm(a, b):
-    return (a*b)/gcd(a, b)
+    return (a*b)//gcd(a, b)
 
 def magical_number(n, A, B):
     LCM = lcm(A, B)
-    below_lcm = LCM/A + LCM/B - 1
+    below_lcm = LCM//A + LCM//B - 1
 
-    lcm_counter = int(n/below_lcm)
+    lcm_counter = n//below_lcm
     remain = n % below_lcm
 
     A_add = 0
     B_add = 0
     final_add = 0
-    
+
     while remain:
         if A_add + A <= B_add + B:
             A_add += A
@@ -42,7 +42,7 @@ def magical_number(n, A, B):
             final_add = B_add
         remain -= 1
 
-    return int((lcm_counter * LCM) + final_add) % (10**9 + 7)
+    return ((lcm_counter * LCM) + final_add) % (10**9 + 7)
 ####
 print(magical_number(1, 2, 3))
 print(magical_number(4, 2, 3))
