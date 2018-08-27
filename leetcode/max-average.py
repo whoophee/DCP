@@ -10,6 +10,7 @@
 # Thus return 12.75.
 ####
 # BRUTE FORCE
+# TODO; binary search the max average
 def max_contiguous_subarray(arr, k):
 
     t = [0]
