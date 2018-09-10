@@ -10,15 +10,19 @@
 # If a < c OR a==c AND b < d.
 ####
 def primes(x):
-    sieve = list(range(2, x))
-    primes = []
-    while sieve:
-        cur = sieve[0]
-        yield cur
-        for i in reversed(range(0, len(sieve), cur)):
-            del sieve[i]
+    sieve = [True]*x
+    sieve[0] = sieve[1] = False
+    i = 2
+    while i*i < x:
+        if sieve[i]:
+            for cur in range(i*i, x, i):
+                sieve[cur] = False
+        i += 1
+    return [i for i, x in enumerate(sieve) if x]
+
+
 def goldbach_pair(x):
-    p = list(primes(x))
+    p = primes(x)
     beg = 0
     end = len(p)-1
     while beg < end:
